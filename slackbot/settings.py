@@ -25,6 +25,8 @@ SECRET_KEY = '0&#tbedx7d%h^+=%a^r*1p_$8-xp*dwgibsgju2!to5iaq245+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SLACK_TOKEN = os.environ['SLACK_API_TOKEN']
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'chat',
 ]
 
 MIDDLEWARE = [
