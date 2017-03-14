@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0&#tbedx7d%h^+=%a^r*1p_$8-xp*dwgibsgju2!to5iaq245+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = eval(os.getenv('DEBUG', 'True'))
 
-SETTING_MANAGE_BASE_URL = os.getenv('SETTING_MANAGE_BASE_URL', '')
+SETTING_MANAGE_BASE_URL = os.getenv('SETTING_MANAGE_BASE_URL', 'https://discovery-settingmanagement.azurewebsites.net/')
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
