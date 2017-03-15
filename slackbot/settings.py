@@ -29,6 +29,7 @@ SETTING_MANAGE_BASE_URL = os.getenv('SETTING_MANAGE_BASE_URL', 'https://discover
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
+    'discovery-slackbot.azurewebsites.net'
 ]
 
 
