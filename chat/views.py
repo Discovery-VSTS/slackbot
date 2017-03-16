@@ -25,7 +25,7 @@ class ChatView(APIView):
         logging.info("Retrieving token and channel for slack...")
         params = {'instance_id': instance_id, 'user_email': user_email}
         r = requests.get(SETTING_MANAGE_BASE_URL + 'v1/tokenstorage/', params=params)
-
+        logging.warn("Message from: ", r.text)
         logging.info("Received json=", r.json())
         slack_token = r.json()['slack_token']
         slack_channel = r.json()['slack_channel']
