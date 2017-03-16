@@ -12,16 +12,26 @@ class ChatView(APIView):
     def post(self, request):
         data = request.data
 
+        logging.info("Received data: ", data)
+
         instance_id = data['instance_id']
         user_email = data['user_email']
         msg = data['msg']
+
+        logging.info("Instance ID={}".format(instance_id))
+        logging.info("User email={}".format(user_email))
+        logging.info("Message={}".format(msg))
 
         logging.info("Retrieving token and channel for slack...")
         params = {'instance_id': instance_id, 'user_email': user_email}
         r = requests.get(SETTING_MANAGE_BASE_URL + 'v1/tokenstorage/', params=params)
 
+        logging.info("Received json=", r.json())
         slack_token = r.json()['slack_token']
         slack_channel = r.json()['slack_channel']
+
+        logging.info("slack_token={}".format(slack_token))
+        logging.info("slack_channel={}".format(slack_channel))
 
         if slack_token is None or slack_token == '':
             logging.warn('No slack token found in database, cant post to channel')
