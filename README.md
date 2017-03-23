@@ -24,4 +24,4 @@ This is the list of endpoints:
 
 This list can be accessed through `127.0.0.1:8000/docs`
 
-Visit each link in the browser for a detailed description of each endpoint. Proper documentation will be created in the future.
+Visit each link in the browser for a detailed description of each endpoint.
