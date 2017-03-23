@@ -12,11 +12,10 @@ COPY requirements.txt ./
 RUN pip3 install -r requirements.txt
 COPY . .
 
-ENV DEBUG False
-ENV PROD True
-
 EXPOSE 8000
 
 WORKDIR /usr/src/app/
+
+RUN python manage.py collectstatic --no-input
 
 CMD ["gunicorn", "slackbot.wsgi", "-b", "0.0.0.0:8000"]
