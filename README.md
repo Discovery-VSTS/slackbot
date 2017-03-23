@@ -7,8 +7,6 @@ Create virtual environment with python 3.5+ as base interpreter
 
 Run `pip install -r requirements.txt`
 
-Finally, run `python manage.py migrate` and then `python manage.py runserver`
-
 _Always make sure you are in the proper virtual environment_
 
 Run
