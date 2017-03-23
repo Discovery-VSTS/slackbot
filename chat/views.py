@@ -9,6 +9,9 @@ import requests
 
 
 class ChatView(APIView):
+    """
+    Send message to Slack group through Slack API.
+    """
     def post(self, request):
         data = request.data
 
